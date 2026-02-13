@@ -5,7 +5,8 @@ const initialState = [
     id: 1, 
     text: "Learn Redux", 
     completed: false, 
-    dueDate: "2024-12-31" // 1️⃣ Include a date in the default todo
+    dueDate: "2024-12-31",
+    category: "Work" // 1️⃣ Include a date in the default todo
   },
 ];
 
@@ -18,7 +19,9 @@ const todoSlice = createSlice({
         id: Date.now(),
         text: action.payload.text,
         completed: false,
-        dueDate: action.payload.dueDate, // 2️⃣ Store due date
+        dueDate: action.payload.dueDate,
+        priority: action.payload.priority,
+        category : action.payload.category,
       });
     },
     toggleComplete: (state, action) => {
