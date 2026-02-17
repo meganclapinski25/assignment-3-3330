@@ -1,10 +1,17 @@
 export const saveState = (state) => {
-    try {
-      localStorage.setItem("todos", JSON.stringify(state));
-    } catch (error) {
-      console.error("Error saving state to LocalStorage:", error);
-    }
-  };
+  try {
+    const serializedState = JSON.stringify({
+      todos: state.todos,
+      filters: state.filters,
+      sorting: state.sorting,
+      events: state.events,
+      finances: state.finances,
+    });
+    localStorage.setItem('todos', serializedState);
+  } catch (err) {
+    console.error('Could not save state:', err);
+  }
+};
   
   export const loadState = () => {
     try {
