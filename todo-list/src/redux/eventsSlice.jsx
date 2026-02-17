@@ -14,11 +14,14 @@ const eventsSlice = createSlice({
             });
         },
         updateEvent: (state,action) =>{
-
+            const index = state.findIndex((e) => e.id === action.payload.id);
+            if (index !== -1){
+                state[index] = {... state[index], ...action.payload};
+            }
         },
 
         deleteEvent: (state, action ) =>{
-            
+            return state.filter((e) => e.id !== action.payload);
         }
     }
 })

@@ -1,27 +1,27 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const bankSlice = createSlice({
-    name: 'events',
-    initialState: [],
+    name: 'finaces',
+    initialState: {
+        budget : 0,
+        expenses: [],
+    },
     reducers: {
         setBudget: (state,action) =>{
             state.budget = action.payload;
         },
         addExpense:(state, action) => {
-            state.push({
+            state.expenses.push({
                 id: action.payload.id,
                 amount: action.payload.amount,
                 category: action.payload.category,
-                time: action.payload.time,
+                date: action.payload.date,
                 note: action.payload.note,
             });
         },
-        updateEvent: (state,action) =>{
-
-        },
 
         deleteEvent: (state, action ) =>{
-            
+          state.expenses = state.expenses.filter((e) => e.id !== action.payload);  
         }
     }
 })
