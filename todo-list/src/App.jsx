@@ -8,7 +8,7 @@ import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <h1>Redux To-Do List</h1>
       <AddTodo />
       <FilterControls />

@@ -6,14 +6,15 @@ const AddTodo = () => {
   const [text, setText] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("Low");
+  const [category, setCategory] = useState("Work");
   
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim()) {
-      // Wrap text and dueDate in an object
-      dispatch(addTodo({ text, dueDate, priority }));
+      
+      dispatch(addTodo({ text, dueDate, priority, category }));
       setText("");
     }
   };
