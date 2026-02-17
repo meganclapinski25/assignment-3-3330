@@ -1,19 +1,40 @@
 import React from "react";
+import { useState } from 'react';
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/ToDoList";
 import FilterControls from "./components/FilterControls";
-import SortingControls from "./components/SortingControls"; // 1️⃣
-
+import SortingControls from "./components/SortingControls"; 
+import NavBar from './components/NavBar';
 import './App.css'
 
 function App() {
+  const [activeTab, setActiveTab] = useState('todos');
+  
   return (
     <div className="app-container">
-      <h1>Redux To-Do List</h1>
-      <AddTodo />
-      <FilterControls />
-      <SortingControls /> {/* 2️⃣ */}
-      <TodoList />
+      <h1>Student Dashboard</h1>
+      <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />  {/* ← this was missing */}
+
+      {activeTab === 'todos' && (
+        <div className="tab-content">
+          <AddTodo />
+          <FilterControls />
+          <SortingControls />
+          <TodoList />
+        </div>
+      )}
+
+      {activeTab === 'calendar' && (
+        <div className="tab-content">
+          <p>Calendar coming soon</p>
+        </div>
+      )}
+
+      {activeTab === 'finances' && (
+        <div className="tab-content">
+          <p>Finances coming soon</p>
+        </div>
+      )}
     </div>
   );
 }

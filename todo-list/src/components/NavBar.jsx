@@ -19,4 +19,4 @@ function NavBar({activeTab, setActiveTab}) {
         </nav>
     );
 }
-export default TabNav;
+export default NavBar;
