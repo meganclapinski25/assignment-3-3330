@@ -12,7 +12,19 @@ function EventsTab(){
     const events = useSelector((state) => state.events);
 
 
-
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if(!title) return;
+        dispatch(addEvent({
+            id: Date.now(),
+            title,
+            day,
+            time,
+        }));
+        setTitle('');
+        setTime('');
+        setDay('Sunday');
+    };
 
 
     return (

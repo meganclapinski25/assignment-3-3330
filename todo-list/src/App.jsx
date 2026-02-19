@@ -5,6 +5,7 @@ import TodoList from "./components/ToDoList";
 import FilterControls from "./components/FilterControls";
 import SortingControls from "./components/SortingControls"; 
 import NavBar from './components/NavBar';
+import EventsTab from './components/EventsTab';
 import './App.css'
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
 
       {activeTab === 'calendar' && (
         <div className="tab-content">
-          <p>Calendar coming soon</p>
+          <EventsTab />
         </div>
       )}
 

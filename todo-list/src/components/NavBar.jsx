@@ -3,17 +3,17 @@ function NavBar({activeTab, setActiveTab}) {
         <nav className="nav-bar">
             <button 
                 className = {activeTab === 'todos' ? 'tab active' : 'tab'}
-                onClock={() => setActiveTab('todos')}
+                onClick={() => setActiveTab('todos')}
             > To-Dos 
             </button>
             <button 
                 className = {activeTab === 'calendar' ? 'tab active' : 'tab'}
-                onClock={() => setActiveTab('calendar')}
+                onClick={() => setActiveTab('calendar')}
             > Events 
             </button>
             <button 
                 className = {activeTab === 'finances' ? 'tab active' : 'tab'}
-                onClock={() => setActiveTab('finances')}
+                onClick={() => setActiveTab('finances')}
             > Finances
             </button>
         </nav>
