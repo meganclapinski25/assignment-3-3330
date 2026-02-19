@@ -4,7 +4,6 @@ import filtersReducer from "./filtersSlice";
 import sortingReducer from "./sortingSlice"; // 1️⃣
 import { loadState, saveState } from "./localStorage";
 import eventsReducer from './eventsSlice';
-import financesReducer from './bankSlice'; 
 
 const preloadedState = loadState() || { todos: [] };
 
@@ -14,7 +13,7 @@ export const store = configureStore({
     filters: filtersReducer,
     sorting: sortingReducer,
     events: eventsReducer,
-    finances: financesReducer,
+    
   },
   preloadedState,
 });

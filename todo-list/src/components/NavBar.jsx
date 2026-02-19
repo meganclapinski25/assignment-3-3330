@@ -11,11 +11,7 @@ function NavBar({activeTab, setActiveTab}) {
                 onClick={() => setActiveTab('calendar')}
             > Events 
             </button>
-            <button 
-                className = {activeTab === 'finances' ? 'tab active' : 'tab'}
-                onClick={() => setActiveTab('finances')}
-            > Finances
-            </button>
+            
         </nav>
     );
 }
