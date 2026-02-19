@@ -14,9 +14,8 @@ body {
 }
 
 .app-container {
-  max-width: 600px;
   width: 100%;
-  text-align: center;
+  max-width: 1300px;
 }
 
 h1 {
@@ -67,3 +66,117 @@ li {
   opacity: 0;
   transform: scale(0.8);
 }
+/* ── Weekly Events Grid ── */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+
+
+
+.day-column {
+  background: #f8f9fb;
+  border: 1px solid #eaedf2;
+  border-radius: 10px;
+  padding: 12px 10px;
+  min-height: 250px;
+  width: 160px;
+}
+
+.day-column h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eaedf2;
+}
+
+.event-chip {
+  background: #1a1a2e;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+
+.event-chip span:first-child {
+  font-weight: 600;
+  padding-right: 16px;
+}
+
+.event-time {
+  font-size: 0.72rem;
+  color: #a0a8c0;
+}
+
+.event-chip button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.event-chip button:hover {
+  opacity: 1;
+}
+
+/* ── Events Form ── */
+.events-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  background: #f8f9fb;
+  border: 1px solid #eaedf2;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.events-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px 14px;
+  border: 1px solid #dde1e7;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+.events-input:focus {
+  outline: none;
+  border-color: #1a1a2e;
+}
+
+.events-select {
+  padding: 10px 14px;
+  border: 1px solid #dde1e7;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #ffffff;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+
+.events-select:focus {
+  outline: none;
+  border-color: #1a1a2e;
+}
+

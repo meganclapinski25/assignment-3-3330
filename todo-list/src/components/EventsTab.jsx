@@ -23,14 +23,14 @@ function EventsTab(){
         }));
         setTitle('');
         setTime('');
-        setDay('Sunday');
+        setDay('Monday');
     };
 
 
     return (
         <div>
             <h2>Weekly Events</h2>
-            <form onSubmit ={handleSubmit}>
+            <form className = "events-form"onSubmit ={handleSubmit}>
                 <input
                     type="text"
                     placeholder ="Event Name"
@@ -60,9 +60,9 @@ function EventsTab(){
                             .filter((e)=> e.day ===d)
                             .map((e)=>(
                                 <div key={e.id} className="event-chip">
-                                    <span>{title}</span>
+                                    <span>{e.title}</span>
                                     {e.title &&<span className ="event-time">{e.time}</span>}
-                                    <button onClick={()=>dispatchEvent(deleteEvent(e.id))}>X</button>
+                                    <button onClick={()=>dispatch(deleteEvent(e.id))}>X</button>
     
                                 </div>
                             ))}

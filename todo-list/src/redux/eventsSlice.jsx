@@ -8,7 +8,7 @@ const eventsSlice = createSlice({
             state.push({
                 id: action.payload.id,
                 title: action.payload.title,
-                date: action.payload.date,
+                day: action.payload.day,
                 time: action.payload.time,
                 description: action.payload.description,
             });
